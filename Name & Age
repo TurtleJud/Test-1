@@ -1,0 +1,25 @@
+using System;
+
+public class Program
+{
+	public static void Main()
+	{
+		string name;
+		string age;
+		Console.WriteLine("How old are you?");
+		age = Console.ReadLine();
+		int ageAsInt;
+		bool cond = (int.TryParse(age, out ageAsInt));
+		while (cond == false)
+		{
+			Console.WriteLine("You need to put in a real age!");
+			Console.WriteLine("How old are you?");
+			age = Console.ReadLine();
+			cond = (int.TryParse(age, out ageAsInt));
+		}
+
+		Console.WriteLine("What is your name?");
+		name = Console.ReadLine();
+		Console.WriteLine("You are " + age + " years old " + name);
+	}
+}
