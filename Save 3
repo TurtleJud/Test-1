@@ -1,0 +1,48 @@
+using System;
+using System.Linq;
+
+public class Program
+{
+	public static void Main()
+	{
+		string name;
+		string answer;
+		int score = 0;
+        int index;
+		bool dead = false; 
+		bool containsNumber = false;
+		Random rand = new Random();
+		String[] removed = new String[5];
+		String[, ] CountryCapital = {{"United States", "Washington DC"}, {"Germany", "Berlin"}, {"Canada", "Ottawa"}};
+		Console.WriteLine("What is your name?");
+		name = Console.ReadLine();
+		
+		index = rand.Next(CountryCapital.Length / 2);
+		while (dead = false)
+		{
+			while(removed.Contains(index))
+			{
+    		index = rand.Next(CountryCapital.Length / 2);
+			}
+			Console.WriteLine("What is the capital of " + (CountryCapital[index, 0]) + "?");
+			answer = Console.ReadLine();
+			if (answer == CountryCapital[index, 1])
+		{
+			Console.WriteLine("correct!");
+			score = score + 1;
+			removed.SetValue( "index", index );
+		}
+		else
+		{
+			Console.WriteLine("incorrect");
+			Console.WriteLine("You got a score of " + score + "!");
+			dead = true;
+		}
+
+
+
+		}
+
+	}
+        Console.ReadKey()
+	}
