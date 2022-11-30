@@ -4,7 +4,7 @@ public class Program
 {
 	public static void Main()
 	{
-		string name;
+		//string name;
 		string answer;
 		//Create a Random object  
 		Random rand = new Random();
