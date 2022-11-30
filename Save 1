@@ -8,8 +8,10 @@ public class Program
 		string[, ] CountryCapital = {{"United States", "Washington DC"}, {"Germany", "Berlin"}, {"Canada", "Ottawa"}};
 		Console.WriteLine("What is your name?");
 		name = Console.ReadLine();
-		Console.WriteLine("Press a key to play");
-		Console.ReadKey();
-		Console.WriteLine("debug");
+		//Console.WriteLine("Press a key to play");
+		//Console.ReadKey();
+		//Console.WriteLine("debug");
+		System.Console.WriteLine(CountryCapital[0, 0]);
+		
 	}
 }
