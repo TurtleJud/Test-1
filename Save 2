@@ -14,7 +14,7 @@ public class Program
 		//Generate a random index less than the size of the array.  
 		int index = rand.Next(CountryCapital.Length / 2);
 		//Display the result.  
-		System.Console.WriteLine("What is the capital of " + (CountryCapital[index, 0]) + "?");
+		Console.WriteLine("What is the capital of " + (CountryCapital[index, 0]) + "?");
 		answer = Console.ReadLine();
 		if (answer == CountryCapital[index, 1])
 		{
