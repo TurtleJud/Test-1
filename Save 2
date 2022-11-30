@@ -1,0 +1,18 @@
+using System;
+
+public class Program
+{
+	public static void Main()
+	{
+		string name;
+		// Create a Random object  
+		Random rand = new Random(); 
+		string[, ] CountryCapital = {{"United States", "Washington DC"}, {"Germany", "Berlin"}, {"Canada", "Ottawa"}};
+		Console.WriteLine("What is your name?");
+		name = Console.ReadLine();
+		// Generate a random index less than the size of the array.  
+		int index = rand.Next(CountryCapital.Length);  
+		// Display the result.  
+		System.Console.WriteLine("Randomly selected Country is " + (CountryCapital[1, 0]));
+	}
+}
