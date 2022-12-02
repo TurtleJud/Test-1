@@ -10,14 +10,13 @@ public class Program
 		int score = 0;
 		int index;
 		bool dead = false;
-		bool containsNumber = false;
 		Random rand = new Random();
-		String[] removed = new String[5];
+		int[] removed = new int[5];
 		String[, ] CountryCapital = {{"United States", "Washington DC"}, {"Germany", "Berlin"}, {"Canada", "Ottawa"}};
-		Console.WriteLine("What is your name?");
-		name = Console.ReadLine();
+		//Console.WriteLine("What is your name?");
+		//name = Console.ReadLine();
 		index = rand.Next(CountryCapital.Length / 2);
-		while (dead = false)
+		while (dead == false)
 		{
 			while (removed.Contains(index))
 			{
@@ -30,7 +29,7 @@ public class Program
 			{
 				Console.WriteLine("correct!");
 				score = score + 1;
-				removed.SetValue(index, index);
+				removed.SetValue(index , index); // removed.SetValue(index , index); might break because resuing index. something like removed.SetValue(index[index];
 			}
 			else
 			{
