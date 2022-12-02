@@ -11,7 +11,7 @@ public class Program
 		int index;
 		bool dead = false;
 		Random rand = new Random();
-		int[] removed = new int[5];
+		int[] removed = new int[10000];
 		String[, ] CountryCapital = {{"Null", "Null"}, {"Germany", "Berlin"}, {"Canada", "Ottawa"}, {"France", "Paris"}, {"South Korea", "Soeul"}, {"United States", "Washington DC"}};
 		//Console.WriteLine("What is your name?");
 		//name = Console.ReadLine();
