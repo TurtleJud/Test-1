@@ -12,10 +12,10 @@ public class Program
 		bool dead = false;
 		Random rand = new Random();
 		int[] removed = new int[5];
-		String[, ] CountryCapital = {{"United States", "Washington DC"}, {"Germany", "Berlin"}, {"Canada", "Ottawa"}};
+		String[, ] CountryCapital = {{"Null", "Null"}, {"Germany", "Berlin"}, {"Canada", "Ottawa"}, {"France", "Paris"}, {"South Korea", "Soeul"}, {"United States", "Washington DC"}};
 		//Console.WriteLine("What is your name?");
 		//name = Console.ReadLine();
-		index = rand.Next(CountryCapital.Length / 2);
+		index = rand.Next(CountryCapital.Length);
 		while (dead == false)
 		{
 			while (removed.Contains(index))
@@ -29,7 +29,7 @@ public class Program
 			{
 				Console.WriteLine("correct!");
 				score = score + 1;
-				removed.SetValue(index , index); // removed.SetValue(index , index); might break because resuing index. something like removed.SetValue(index[index];
+				removed.SetValue(index , score); // removed.SetValue(index , index); might break because resuing index. something like removed.SetValue(index[index];
 			}
 			else
 			{
