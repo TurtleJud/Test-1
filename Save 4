@@ -1,13 +1,14 @@
-//using System;
+using System;
 using System.Linq;
 using System.Collections;
 
-//public class Program
+public class Program
 {
 	public static void Main()
 	{
 		//string name;
 		string answer;
+        string lowercaseAnswer;
 		int score = 0;
 		int index;
 		bool dead = false;
@@ -26,8 +27,9 @@ using System.Collections;
 			}
 
 			Console.WriteLine("What is the capital of " + (CountryName[index]) + "?");
-			answer = Console.ReadLine().ToLower();
-			if (answer == CountryCapital[index])
+			answer = Console.ReadLine();
+            lowercaseAnswer = answer.ToLower();
+			if (lowercaseAnswer == CountryCapital[index])
 			{
 				Console.WriteLine("correct!");
 				score = score + 1;
