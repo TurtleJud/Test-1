@@ -4,96 +4,163 @@ using System.Collections;
 
 public class Program
 {		
-	public static void
-	bool dead = false;
-	string answer;
-	string lowercaseAnswer;
-	int score = 0;
-	int index;
-
-		public static void Main()
-	{
-	public static void GameLoop()
-	{
-		Random rand = new Random();
-		ArrayList remove = new ArrayList();
-		ArrayList AmericanCountryName = new ArrayList();
-        ArrayList AmericanCountryCapital = new ArrayList();
-		ArrayList EuropeanCountryName43 = new ArrayList();
-        ArrayList EuropeanCountryCapital43 = new ArrayList();
-		ArrayList AfricanCountryName = new ArrayList();
-        ArrayList AfricanCountryCapital = new ArrayList();
-		ArrayList AsianCountryName = new ArrayList();
-        ArrayList AsianCountryCapital = new ArrayList();
-		EuropeanCountryName43.Add("albania"); EuropeanCountryName43.Add("andorra"); EuropeanCountryName43.Add("austria"); EuropeanCountryName43.Add("belarus"); EuropeanCountryName43.Add("belgium"); EuropeanCountryName43.Add("bosnia and herzegovina"); EuropeanCountryName43.Add("bulgaria"); EuropeanCountryName43.Add("croatia"); EuropeanCountryName43.Add("czechia"); EuropeanCountryName43.Add("denmark"); EuropeanCountryName43.Add("estonia"); EuropeanCountryName43.Add("finland"); EuropeanCountryName43.Add("france"); EuropeanCountryName43.Add("germany"); EuropeanCountryName43.Add("greece"); EuropeanCountryName43.Add("hungary"); EuropeanCountryName43.Add("iceland"); EuropeanCountryName43.Add("ireland"); EuropeanCountryName43.Add("italy"); EuropeanCountryName43.Add("latvia"); EuropeanCountryName43.Add("liechtenstein"); EuropeanCountryName43.Add("lithuania"); EuropeanCountryName43.Add("luxembourg"); EuropeanCountryName43.Add("malta"); EuropeanCountryName43.Add("moldova"); EuropeanCountryName43.Add("monaco"); EuropeanCountryName43.Add("montenegro"); EuropeanCountryName43.Add("netherlands"); EuropeanCountryName43.Add("north macedonia"); EuropeanCountryName43.Add("norway"); EuropeanCountryName43.Add("poland"); EuropeanCountryName43.Add("portugal"); EuropeanCountryName43.Add("romania"); EuropeanCountryName43.Add("russia"); EuropeanCountryName43.Add("san marino"); EuropeanCountryName43.Add("serbia"); EuropeanCountryName43.Add("slovakia"); EuropeanCountryName43.Add("slovenia"); EuropeanCountryName43.Add("spain"); EuropeanCountryName43.Add("sweden"); EuropeanCountryName43.Add("switzerland"); EuropeanCountryName43.Add("ukraine"); EuropeanCountryName43.Add("united kingdom");
-		EuropeanCountryCapital43.Add("tirana"); EuropeanCountryCapital43.Add("andorra la vella"); EuropeanCountryCapital43.Add("vienna"); EuropeanCountryCapital43.Add("minsk"); EuropeanCountryCapital43.Add("brussels"); EuropeanCountryCapital43.Add("sarajevo"); EuropeanCountryCapital43.Add("sofia"); EuropeanCountryCapital43.Add("zagreb"); EuropeanCountryCapital43.Add("prague"); EuropeanCountryCapital43.Add("copenhagen"); EuropeanCountryCapital43.Add("tallinn"); EuropeanCountryCapital43.Add("helsinki"); EuropeanCountryCapital43.Add("paris"); EuropeanCountryCapital43.Add("berlin"); EuropeanCountryCapital43.Add("athens"); EuropeanCountryCapital43.Add("budapest"); EuropeanCountryCapital43.Add("reykjavik"); EuropeanCountryCapital43.Add("dublin"); EuropeanCountryCapital43.Add("rome"); EuropeanCountryCapital43.Add("riga"); EuropeanCountryCapital43.Add("vaduz"); EuropeanCountryCapital43.Add("vilnius"); EuropeanCountryCapital43.Add("luxembourg"); EuropeanCountryCapital43.Add("valletta"); EuropeanCountryCapital43.Add("chisinau"); EuropeanCountryCapital43.Add("monaco"); EuropeanCountryCapital43.Add("podgorica"); EuropeanCountryCapital43.Add("amsterdam"); EuropeanCountryCapital43.Add("skopje"); EuropeanCountryCapital43.Add("oslo"); EuropeanCountryCapital43.Add("warsaw"); EuropeanCountryCapital43.Add("lisbon"); EuropeanCountryCapital43.Add("bucharest"); EuropeanCountryCapital43.Add("moscow"); EuropeanCountryCapital43.Add("san marino"); EuropeanCountryCapital43.Add("belgrade"); EuropeanCountryCapital43.Add("bratislava"); EuropeanCountryCapital43.Add("ljubljana"); EuropeanCountryCapital43.Add("madrid"); EuropeanCountryCapital43.Add("stockholm"); EuropeanCountryCapital43.Add("bern"); EuropeanCountryCapital43.Add("kiev"); EuropeanCountryCapital43.Add("london");
-
-		
-		Console.WriteLine("Welcome to the Country/Capital quiz game!");
-		Console.WriteLine("Type 'Country' If you wish to answer the country.");
-		Console.WriteLine("Type 'Capital' If you wish to answer the Capital.");
-		Console
+	
+	static bool dead = false;
+	static Random rand = new Random();
+	static int score = 0;
+	static int index;
+	static string answer;
+	static string lowercaseAnswer;
+	static string AnswerVer;
+	static string RegionVer;
+	static int ageAsInt;
+	static bool AnswerCond1;
+	static bool AnswerCond2;
+	static bool RegionCond1;
+	static bool RegionCond2;
+	static bool RegionCond3;
+	static bool RegionCond4;
+	static string LowerAnswerVer;
+	static string LowerRegionVer;
+	static ArrayList remove = new ArrayList();
+	static ArrayList AmericanCountryName = new ArrayList();
+    static ArrayList AmericanCountryCapital = new ArrayList();
+	static ArrayList EuropeanCountryName43 = new ArrayList();
+    static ArrayList EuropeanCountryCapital43 = new ArrayList();
+	static ArrayList AfricanCountryName = new ArrayList();
+    static ArrayList AfricanCountryCapital = new ArrayList();
+	static ArrayList AsianCountryName = new ArrayList();
+    static ArrayList AsianCountryCapital = new ArrayList();
+	
+	
+		public static void CountryCapitalSetting2()
+		{
+			AnswerVer = Console.ReadLine();
+			LowerAnswerVer = AnswerVer.ToLower();
+			AnswerCond1 = (LowerAnswerVer == "country");
+      		AnswerCond2 = (LowerAnswerVer == "capital");
+			if (AnswerCond1 == false)
+		{
+      		if (AnswerCond2 == false)
+        	{
+		    Console.WriteLine("You need to put in either 'Capital' or 'Country'!");
+			CountryCapitalSetting2();
+       		}
+        	else
+        	{
+         	 Console.WriteLine("Answer set to Capital");
+       		 }
+      	}
+      	else
+      	{
+         Console.WriteLine("Answer set to Country");
+     	}   
 	}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		index = rand.Next(0,200); // scale up the 2nd number to match the number of Name/Capitals there are.
-        while (dead == false)
+		public static void CountryCapitalSetting1()
 		{
-			if (remove.Contains(index))
-			{
-				index = rand.Next(0,200); // scale up the 2nd number to match the number of Name/Capitals there are.
-			}
-            else 
-            {
-			Console.WriteLine("What is the capital of " + (CountryName[index]) + "?");
-			answer = Console.ReadLine();
-			lowercaseAnswer = answer.ToLower();
-
-			if (lowercaseAnswer.Equals(CountryCapital[index]))
-			{
-				Console.WriteLine("correct!");
-				score = score + 1;
-				remove.Add(index); 
-			}
-			else
-			{
-				Console.WriteLine("wrong, it was " + CountryCapital[index]);
-				Console.WriteLine("You got a score of " + score + "!");
-				dead = true;
-			}
-            }
-		} // dead loop finish
-		Console.WriteLine("Hit 1 if you wish to play again, Hit 2 if you wish to exit");
-		var finalInput = Console.ReadLine();
-		if(FinalInput == 1); 
-		{
-			dead = false;
+			Console.WriteLine("Type 'Country' If you wish to answer the Country.");
+			Console.WriteLine("Type 'Capital' If you wish to answer the Capital.");
+			CountryCapitalSetting2();
 		}
-		if(FinalInput == 2);
+
+		public static void RegionSetting1()
 		{
-			Environment.Exit(0);
+			Console.WriteLine("Type 'American' If you wish to use countries in North and South America.");
+			Console.WriteLine("Type 'European' If you wish to use countries in Europe.");
+			Console.WriteLine("Type 'African' If you wish to use countries in Africa.");
+			Console.WriteLine("Type 'Asian' If you wish to use countries in Asia.");
+			RegionSetting2();
 		}
+
+		public static void RegionSetting2()
+		{
+			RegionVer = Console.ReadLine();
+			LowerRegionVer = RegionVer.ToLower();
+			RegionCond1 = (LowerRegionVer == "american");
+      		RegionCond2 = (LowerRegionVer == "european");
+			RegionCond3 = (LowerRegionVer == "african");
+      		RegionCond4 = (LowerRegionVer == "asian");
+			if (RegionCond1 == false)
+       		{	
+			    if (RegionCond2 == false)
+				{
+					if (RegionCond3 == false)
+        			{			
+						if (RegionCond4 == false)
+					    {
+							Console.WriteLine("You need to put in either 'American', 'European', 'African', or 'Asian'");
+							RegionSetting2();
+						}
+						else 
+						{
+							Console.WriteLine("Sorry. Asia isn't in our database yet.");
+							Console.WriteLine("Region set to European");
+						}
+					}
+					else 
+					{
+					Console.WriteLine("Sorry. Africa isn't in our database yet.");
+					Console.WriteLine("Region set to European");
+					}
+				}
+				else
+				{
+				Console.WriteLine("Region set to European");
+				}
+			}
+			else 
+			{
+			Console.WriteLine("Sorry. America isn't in our database yet.");
+			Console.WriteLine("Region set to European");
+			}
+		}
+
+
+		public static void gameloop()
+		{
+			EuropeanCountryName43.Add("albania"); EuropeanCountryName43.Add("andorra"); EuropeanCountryName43.Add("austria"); EuropeanCountryName43.Add("belarus"); EuropeanCountryName43.Add("belgium"); EuropeanCountryName43.Add("bosnia and herzegovina"); EuropeanCountryName43.Add("bulgaria"); EuropeanCountryName43.Add("croatia"); EuropeanCountryName43.Add("czechia"); EuropeanCountryName43.Add("denmark"); EuropeanCountryName43.Add("estonia"); EuropeanCountryName43.Add("finland"); EuropeanCountryName43.Add("france"); EuropeanCountryName43.Add("germany"); EuropeanCountryName43.Add("greece"); EuropeanCountryName43.Add("hungary"); EuropeanCountryName43.Add("iceland"); EuropeanCountryName43.Add("ireland"); EuropeanCountryName43.Add("italy"); EuropeanCountryName43.Add("latvia"); EuropeanCountryName43.Add("liechtenstein"); EuropeanCountryName43.Add("lithuania"); EuropeanCountryName43.Add("luxembourg"); EuropeanCountryName43.Add("malta"); EuropeanCountryName43.Add("moldova"); EuropeanCountryName43.Add("monaco"); EuropeanCountryName43.Add("montenegro"); EuropeanCountryName43.Add("netherlands"); EuropeanCountryName43.Add("north macedonia"); EuropeanCountryName43.Add("norway"); EuropeanCountryName43.Add("poland"); EuropeanCountryName43.Add("portugal"); EuropeanCountryName43.Add("romania"); EuropeanCountryName43.Add("russia"); EuropeanCountryName43.Add("san marino"); EuropeanCountryName43.Add("serbia"); EuropeanCountryName43.Add("slovakia"); EuropeanCountryName43.Add("slovenia"); EuropeanCountryName43.Add("spain"); EuropeanCountryName43.Add("sweden"); EuropeanCountryName43.Add("switzerland"); EuropeanCountryName43.Add("ukraine"); EuropeanCountryName43.Add("united kingdom");
+			EuropeanCountryCapital43.Add("tirana"); EuropeanCountryCapital43.Add("andorra la vella"); EuropeanCountryCapital43.Add("vienna"); EuropeanCountryCapital43.Add("minsk"); EuropeanCountryCapital43.Add("brussels"); EuropeanCountryCapital43.Add("sarajevo"); EuropeanCountryCapital43.Add("sofia"); EuropeanCountryCapital43.Add("zagreb"); EuropeanCountryCapital43.Add("prague"); EuropeanCountryCapital43.Add("copenhagen"); EuropeanCountryCapital43.Add("tallinn"); EuropeanCountryCapital43.Add("helsinki"); EuropeanCountryCapital43.Add("paris"); EuropeanCountryCapital43.Add("berlin"); EuropeanCountryCapital43.Add("athens"); EuropeanCountryCapital43.Add("budapest"); EuropeanCountryCapital43.Add("reykjavik"); EuropeanCountryCapital43.Add("dublin"); EuropeanCountryCapital43.Add("rome"); EuropeanCountryCapital43.Add("riga"); EuropeanCountryCapital43.Add("vaduz"); EuropeanCountryCapital43.Add("vilnius"); EuropeanCountryCapital43.Add("luxembourg"); EuropeanCountryCapital43.Add("valletta"); EuropeanCountryCapital43.Add("chisinau"); EuropeanCountryCapital43.Add("monaco"); EuropeanCountryCapital43.Add("podgorica"); EuropeanCountryCapital43.Add("amsterdam"); EuropeanCountryCapital43.Add("skopje"); EuropeanCountryCapital43.Add("oslo"); EuropeanCountryCapital43.Add("warsaw"); EuropeanCountryCapital43.Add("lisbon"); EuropeanCountryCapital43.Add("bucharest"); EuropeanCountryCapital43.Add("moscow"); EuropeanCountryCapital43.Add("san marino"); EuropeanCountryCapital43.Add("belgrade"); EuropeanCountryCapital43.Add("bratislava"); EuropeanCountryCapital43.Add("ljubljana"); EuropeanCountryCapital43.Add("madrid"); EuropeanCountryCapital43.Add("stockholm"); EuropeanCountryCapital43.Add("bern"); EuropeanCountryCapital43.Add("kiev"); EuropeanCountryCapital43.Add("london");
+
+			index = rand.Next(0,42); //43 needs to be made into var that holds the max amount of elements in the RegionVer arraylist
+			
+			if (dead == false)
+			{
+				while (remove.Contains(index));
+				{
+				index = rand.Next(0,42);
+				}
+
+				Console.WriteLine("What is the capital of " + (EuropeanCountryName43[index]) + "?");
+				answer = Console.ReadLine();
+            	lowercaseAnswer = answer.ToLower();
+
+					if (lowercaseAnswer == EuropeanCountryCapital43[index])
+					{
+					Console.WriteLine("correct!");
+					score = score + 1;
+					remove.Add(index); 
+					gameloop();
+					}
+					else
+					{
+					Console.WriteLine("incorrect");
+					Console.WriteLine("You got a score of " + score + "!");
+					}
+			}
+		}
+
+
+
+		public static void Main()
+		{
+		Console.WriteLine("Welcome to the Country/Capital quiz game!");
+		CountryCapitalSetting1();
+		RegionSetting1();
+		gameloop();
+		Console.ReadLine();
 	
+		}
 
-
-    }
 }
-
